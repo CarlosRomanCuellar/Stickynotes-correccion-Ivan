@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="exercise3.js"></script>
+    <style>
+        *{ box-sizing: 	border-box;}
+        body{
+            background-color: rgb(123, 143, 180);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #container{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .note{
+            border: 4px solid rgb(0, 0, 0);
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+            width: 75%;
+            margin: 10px;
+            overflow: visible;
+        }
+        .noteBar{
+            height: 35px;
+            width: 100%;
+            border-radius: 5px 5px 0 0;
+            background-color: grey;
+            padding-left:5px; 
+            padding-right: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .noteTitle{
+            color: white;
+            background: transparent;
+            width: 85%;
+            padding-left: 10px;
+            margin: 8px 0;
+            border: none;
+            font-size: 1.5em;
+        }
+        .noteTitle::placeholder{
+            color: white;
+            opacity: .5;
+        }
+        .noteTitle:focus{
+            color: black;
+            background-color: white;
+        }
+        .endBar{
+            display: flex;
+            align-items: center;
+        }
+        #addBtn{
+            margin-top: 20px;
+            width:50px;
+        }
+        #showBtn{
+            margin-top: 20px;
+            width:80px;
+        }
+        #historicalBtn{
+            margin-top: 20px;
+            width:60px;
+            padding-right: 10px;
+        }
+        section{
+            padding: 10px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .text{
+            background-color: transparent;
+            width: 100%;
+            border: none;
+            height: 100%;
+            overflow: visible;
+            resize: none;
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+        .info{
+            font-size: .6em;
+        }
+        .icons{
+            width: 3.5%
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <template id="template">
+        <article class="note">
+            <div class="noteBar">
+                <input type="text" class="noteTitle" placeholder="Title" value="">
+                <img src="images/colorIcon.png" class="icons colorBtn">
+                <img src="images/hideIcon.png" class="icons hideBtn">
+                <img src="images/deleteIcon.png" class="icons deleteBtn">
+            </div>
+            <section>
+                <textarea class="text"></textarea>
+                <label class="info create"></label>
+                <label class="info modify"></label>
+            </section>            
+        </article>
+    </template>
+    <div class="endBar">
+        <img src="images/historical_data_Icon.png" id="historicalBtn">
+        <img src="images/addIcon.png" id="addBtn" >
+        <img src="images/showIcon.png" id="showBtn">
+    </div>
+</body>
